@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "gunship-psx",
+  "name": "Gunship",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "gunship-recomp",
+  "rom_identity": {
+    "crc32": [
+      "e6e5b7c1"
+    ],
+    "md5": [
+      "cecf8013fa05793923e8d49510f89f2a"
+    ],
+    "sha1": [
+      "db077318072c2afffc2418f9b7b6130a2fa82095"
+    ],
+    "disc_serials": [
+      "SLUS-00313"
+    ],
+    "sizes": [
+      108415440
+    ],
+    "filenames": [
+      "Gunship (USA).cue",
+      "Gunship (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      8
+    ],
+    "disc_fps": [
+      "3d26f0862e0ad363d630f28915b8d7a03d0428639a636099f981086511725aa6"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/gunship-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "gunship-*-windows-x64.zip",
+      "linux-x64": "gunship-*-linux-x64.zip",
+      "macos-arm64": "gunship-*-macos-arm64.zip",
+      "macos-x64": "gunship-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "gunship.exe",
+    "linux": "gunship",
+    "macos": "gunship"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/gunship-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
